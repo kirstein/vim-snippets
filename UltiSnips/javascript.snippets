@@ -1,0 +1,65 @@
+snippet f "Anonymous function"
+function($1) {
+	$0
+}
+endsnippet
+
+snippet fun "Named function"
+function ${1:name}($2) {
+	$0
+}
+endsnippet
+
+snippet if
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet ife "If then else" b
+if ($1) {
+	$2
+} else {
+	$3
+}
+endsnippet
+
+snippet for "for (...) {...}" b
+for (${2:i} = 0; $2 < ${1:Things}.length; $2 += 1) {
+	${3:var item = $1[$2];}$0
+}
+endsnippet
+
+snippet cl "console.log" b
+console.log(${1:'${2:what the hell?}'});
+endsnippet
+
+snippet ce "console.error" b
+console.error(${2:'${2:what the hell?}'});
+endsnippet
+
+snippet d "debugger" b
+debugger
+endsnippet
+
+snippet try "try {} catch {}" b
+try {
+	$2
+} catch(${1:error}) {
+	$3
+}
+endsnippet
+
+snippet throw "throw" b
+throw new Error(${1:"${2:Something bad happened}"});
+endsnippet
+
+snippet pr "Prototype"
+prototype
+endsnippet
+
+snippet st "Use strict" b
+'use strict';
+
+$0
+endsnippet

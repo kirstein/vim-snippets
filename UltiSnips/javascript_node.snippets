@@ -1,0 +1,159 @@
+snippet rc "require const" b
+const ${2:`!p
+def formatVariableName(path):
+	lastPart = path.split('/')[-1]
+	if lastPart == 'lodash':
+		return '_'
+	else:
+		return re.sub(r'[_\-]', '', lastPart.title())
+snip.rv = formatVariableName(t[1]).rsplit('.')[0]
+`} = require('${1}');$0
+endsnippet
+
+snippet r "Require"
+require('$1')${2:;}
+endsnippet
+
+snippet fsr "Require fs"
+const fs = require('fs');
+endsnippet
+
+snippet e "Exports" b
+exports.${1:memberName} = ${2:${VISUAL}}
+endsnippet
+
+snippet me "Module exports" b
+module.exports = ${1:`!p snip.rv = ''.join(x.title() for x in re.sub('\.js$', '', snip.basename or 'ModuleName').split('_'))`};$0
+endsnippet
+
+snippet desc "Describe" b
+describe('${1:placeholder}', function($2) {
+	${3:${VISUAL}}$0
+});
+endsnippet
+
+snippet it "It should" b
+it('should ${1:exist}', function($2) {
+	${3:${VISUAL}}$0
+});
+endsnippet
+
+snippet assert "Assert error" b
+assert(${3:${VISUAL:1 === 1}}, ${1:'${2:one should be one}'});
+endsnippet
+
+snippet assertt "Assert throws" b
+assert.throws(${3:function() {
+	${VISUAL}$0
+}}, ${1:'${2:one should not throw}'});
+endsnippet
+
+snippet bef "Before each" b
+beforeEach(function() {
+	${VISUAL}$0
+});
+endsnippet
+
+snippet aft "After each" b
+afterEach(function() {
+	${VISUAL}$0
+});
+endsnippet
+
+snippet ass "Assert" b
+assert(${1:false});
+endsnippet
+
+snippet asseq "Assert strict equals" b
+assert.strictEqual(${1:true}, ${2:true});
+endsnippet
+
+snippet assneeq "Assert strict equals" b
+assert.notStrictEqual(${1:true}, ${2:false});
+endsnippet
+
+snippet c "const" b
+const ${1:something} = $0
+endsnippet
+
+snippet l "let" b
+let ${1:something} = $0
+endsnippet
+
+snippet class "class" b
+class ${1:ClassName} {
+	constructor(${2:options}) {
+		$0
+	}
+}
+endsnippet
+
+snippet classe "class extends" b
+class ${1:ClassName} extends ${2:ExtendedClass}{
+	constructor(${3:options}) {
+		$0
+	}
+}
+endsnippet
+
+snippet ra "require assert"
+require('assert');
+endsnippet
+
+snippet cs "context succeed"
+context.succeed${1:(${2:${VISUAL}});}
+endsnippet
+
+snippet cf "context fail"
+context.fail${1:(${2:${VISUAL}});}
+endsnippet
+
+snippet cd "context done"
+context.done${1:(${2:${VISUAL}});}
+endsnippet
+
+snippet = "Fat arrow babe"
+(${1:args}) => {
+	${2:content}$0
+}
+endsnippet
+
+snippet " =\)" r
+((${1:args}) => {
+	${3:content}$0
+})$2
+endsnippet
+
+snippet time "console time" b
+console.time('${1:trigger}');
+${2:${VISUAL}}$0
+console.timeEnd('$1');
+endsnippet
+
+snippet promise "new promise" b
+return new Promise((resolve, reject) => {
+	${1:${VISUAL}}$0
+});
+endsnippet
+
+snippet /* "A JSDoc comment" b
+/**
+ * ${1:${VISUAL}}$0
+ */
+endsnippet
+
+snippet @constr "@constructor"
+@constructor
+endsnippet
+
+snippet @p "@param {Type} varname Description"
+@param {${1:Type}} ${2:varname} ${3:Description}
+endsnippet
+
+snippet @t "@throws {Type} description"
+@throws {${1:Type}} ${2:description}
+endsnippet
+
+snippet @r "@return {Type} Description"
+@return {${1:Type}} ${2:Description}
+endsnippet
