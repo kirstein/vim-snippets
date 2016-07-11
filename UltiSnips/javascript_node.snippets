@@ -5,7 +5,7 @@ def formatVariableName(path):
 	if lastPart == 'lodash':
 		return '_'
 	else:
-		return re.sub(r'[_\-]', '', lastPart.title())
+		return re.sub(r'[_\-]', '', lastPart)
 snip.rv = formatVariableName(t[1]).rsplit('.')[0]
 `} = require('${1}');$0
 endsnippet
