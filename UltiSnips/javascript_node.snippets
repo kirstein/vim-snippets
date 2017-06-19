@@ -14,6 +14,16 @@ snippet r "Require"
 require('$1')${2:;}
 endsnippet
 
+snippet rp "Require bluebird"
+const Promise = require('bluebird');
+endsnippet
+
+snippet fp "Promise.coroutine"
+Promise.coroutine(function * (${1:args}) {
+	$0
+});
+endsnippet
+
 snippet fsr "Require fs"
 const fs = require('fs');
 endsnippet
